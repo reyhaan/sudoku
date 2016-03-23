@@ -1,0 +1,5 @@
+<div class="table">
+	<div class="row" ng-repeat="row in grid">
+		<div class="cell" ng-repeat="cellData in row track by $index">{{cellData ? cellData : null}}</div>
+	</div>
+</div>

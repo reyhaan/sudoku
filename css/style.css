@@ -1,0 +1,22 @@
+.table {
+	height: 288px;
+    width: 288px;
+    position: relative;
+}
+
+.cell {
+	font-size: 14px;
+	font-family: tahoma;
+	height: 30px;
+    width: 30px;
+    position: relative;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    background: #ccc;
+    margin: 1px;
+}
+
+button {
+    margin: 15px;
+}

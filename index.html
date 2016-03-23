@@ -1,14 +1,33 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="sudoku">
 <head>
   <meta charset="utf-8">
   <title>Qlik - Sudoku</title>
-  <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/angular/angular.js"></script>
-</head>
-<body>
+  <link rel="stylesheet" href="css/style.css">
 
-  <p>Sudoku!!</p>
+  <script src="bower_components/angular/angular.js"></script>
+
+  <script src="js/init.js"></script>
+
+  <!-- Services -->
+  <script src="js/services/gridSolverService.js"></script>
+
+  <!-- Directives -->
+  <script src="js/directives/gridDirective.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controllers/rootController.js"></script>
+
+</head>
+<body ng-controller="rootController">
+
+  <h1>Sudoku</h1>
+
+  <grid data="{{grid}}"></grid>
+
+  <button ng-click="solveGrid()">Solve</button>
+
+  <grid data="{{solvedGrid}}"></grid>
 
 </body>
 </html>
