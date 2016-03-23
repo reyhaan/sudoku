@@ -1,17 +1,14 @@
 app.service('gridSolverService', function() {
 
-	var row, col;
-
 	var getUnAssignedLocation = function(grid) {
 		for(row = 0; row < grid.length; row++) {
 			for(col = 0; col < grid.length; col++) {
 				if(grid[row][col] == 0) {
-					return true;
-				} else {
-					return false;
+					return [row, col];
 				}
 			}
 		}
+		return false;
 	};
 
 	var isUniqueInRow = function(grid, row, cellValue) {
@@ -50,9 +47,12 @@ app.service('gridSolverService', function() {
 	var solveRecursively = function(grid) {
 
 		// Assign row and column variables common for all functions used in this function (eliminate extra variable assignments).
-		// row=0, col=0;
+		var row, col;
 
 		var unAssignedLocation = getUnAssignedLocation(grid);
+
+		row = unAssignedLocation[0];
+		col = unAssignedLocation[1];
 
 		// If there are no unassigned location, it means we have solved the puzzle, go! get some beer ;)
 		if(!unAssignedLocation) {
@@ -67,17 +67,15 @@ app.service('gridSolverService', function() {
 					return true;
 				}
 
-				grid[row][col] = null;
+				grid[row][col] = 0;
 			}
 		}
+
 		return false;
 	};
 
-	return {
-
-		// Using backtracking algorithm
-		solve: function(grid) {
-			solveRecursively(grid);
-		}
+	// Using backtracking algorithm
+	this.solve = function(grid) {
+		solveRecursively(grid);
 	}
 });
