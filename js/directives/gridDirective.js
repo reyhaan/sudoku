@@ -1,9 +1,28 @@
 app.directive('grid', function() {
 	return {
-		restrict: 'E',
+		restrict: 'AE',
+		replace: true,
 		templateUrl: 'js/directives/grid.html',
-		link: function(scope, element, attr) {
+		scope: {
+			gridData: '='
+		},
+		link: function(scope, element, attrs) {
+			// Populate an empty solutions table at first
+			if(scope.gridData == undefined) {
+				scope.gridData = [
+					[0,0,0, 0,0,0, 0,0,0],
+					[0,0,0, 0,0,0, 0,0,0],
+					[0,0,0, 0,0,0, 0,0,0],
 
+					[0,0,0, 0,0,0, 0,0,0],
+					[0,0,0, 0,0,0, 0,0,0],
+					[0,0,0, 0,0,0, 0,0,0],
+
+					[0,0,0, 0,0,0, 0,0,0],
+					[0,0,0, 0,0,0, 0,0,0],
+					[0,0,0, 0,0,0, 0,0,0]
+				];
+			}
 		}
 	}
 });

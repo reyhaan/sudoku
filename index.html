@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Qlik - Sudoku</title>
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Credits for the background image -->
+  <!-- <a href="http://www.freepik.com/free-vector/mobile-office-vector-template_715490.htm">Image Designed by Freepik</a> -->
 
   <script src="bower_components/angular/angular.js"></script>
 
@@ -21,13 +24,18 @@
 </head>
 <body ng-controller="rootController">
 
-  <h1>Sudoku</h1>
+  <div class=container>
+    <h1>Sudoku</h1>
 
-  <grid data="{{grid}}"></grid>
+    <div class="grid-container">
+      <grid grid-data="grid" class="pull-left"></grid>
+      <grid grid-data="solvedGrid" class="pull-right"></grid>
+    </div>
 
-  <button ng-click="solveGrid()">Solve</button>
-
-  <grid data="{{solvedGrid}}"></grid>
+    <div class="button-container">
+      <button ng-click="solveGrid()">I'm feeling lazy</button>
+    </div>
+  </div>
 
 </body>
 </html>

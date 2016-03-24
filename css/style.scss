@@ -1,0 +1,123 @@
+// colors
+$green: #4CAF50;
+$blue: #296ad4;
+$white: #ffffff;
+$text-dark: #525252;
+$text-light: #fff;
+$shadow-dark: #444;
+$shadow-light: #777;
+$cell-background: #fff;
+$button-light: #fff;
+$button-blue: #296ad4;
+$button-green: #33cd5f;
+
+// font import
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,500);
+
+// font
+$font-face: 'Roboto', sans-serif;
+
+// reset
+html {
+  box-sizing: border-box;
+
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+// body styles
+body {
+  background: url(../assets/movil_20.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: $font-face;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  line-height: 1;
+
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-family: $font-face;
+  font-size: 32px;
+  color: $white;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px $shadow-dark;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.container {
+    width:600px;
+    margin: 0 auto;
+
+    .grid-container {
+      float: left;
+      width: 100%;
+    }
+
+    .button-container {
+      float: left;
+      width: 100%;
+      text-align: center;
+      margin-top: 25px;
+    }
+}
+
+.table {
+	  height: 290px;
+    width: 290px;
+    position: relative;
+    padding: 1px;
+    background: url(../assets/vector_table.png) no-repeat;
+    background-position: 0px -2px;
+    box-shadow: 0px 0px 20px $shadow-light;
+
+    & .cell {
+        font-size: 16px;
+        font-weight: 700;
+        color: #222;
+        height: 30px;
+        width: 30px;
+        position: relative;
+        float: left;
+        line-height: 30px;
+        text-align: center;
+        background: $cell-background;
+        margin: 1px;
+    }
+}
+
+button {
+    cursor: pointer;
+    margin: 0 auto;
+    color: $text-light;
+    background: $button-green;
+    border: 1px solid $green;
+    border-bottom: 4px solid $green;
+    border-radius: 3px;
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px $shadow-light;
+
+    &:focus {
+      outline: 0;
+    }
+}
