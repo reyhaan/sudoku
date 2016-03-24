@@ -89,7 +89,7 @@ h1 {
     background-position: 0px -2px;
     box-shadow: 0px 0px 20px $shadow-light;
 
-    & .cell {
+    .cell {
         font-size: 16px;
         font-weight: 700;
         color: #222;
@@ -117,7 +117,7 @@ button {
     font-weight: bold;
     text-shadow: 1px 1px 1px $shadow-light;
 
-    &:focus {
+    :focus {
       outline: 0;
     }
 }

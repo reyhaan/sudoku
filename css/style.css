@@ -80,7 +80,7 @@ button {
   font-size: 14px;
   font-weight: bold;
   text-shadow: 1px 1px 1px #777; }
-  button:focus {
+  button :focus {
     outline: 0; }
 
 /*# sourceMappingURL=style.css.map */

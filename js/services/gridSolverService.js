@@ -51,8 +51,10 @@ app.service('gridSolverService', function() {
 
 		var unAssignedLocation = getUnAssignedLocation(grid);
 
-		row = unAssignedLocation[0];
-		col = unAssignedLocation[1];
+		if(unAssignedLocation) {
+			row = unAssignedLocation[0];
+			col = unAssignedLocation[1];
+		}
 
 		// If there are no unassigned location, it means we have solved the puzzle, go! get some beer ;)
 		if(!unAssignedLocation) {
@@ -61,16 +63,20 @@ app.service('gridSolverService', function() {
 
 		for(var cellValue = 1; cellValue <= grid.length; cellValue++) {
 			if(isSafe(grid, row, col, cellValue)) {
+
+				// Put in the cell value.
 				grid[row][col] = cellValue;
 
+				// Return if grid is filled up completely.
 				if(solveRecursively(grid)) {
 					return true;
 				}
 
+				// Else, reset the element that is filled and backtrack.
 				grid[row][col] = 0;
 			}
 		}
-
+		// Need this for recursion.
 		return false;
 	};
 
