@@ -38,6 +38,7 @@ app.service('gridSolverService', function() {
 		return false;
 	};
 
+	// Find if the value selected can be inserted or not based on sudoku rules.
 	var isSafe = function(grid, row, col, cellValue) {
 		return !isUniqueInSection(grid, row-(row%3), col-(col%3), cellValue) &&
 				!isUniqueInColumn(grid, col, cellValue) &&
@@ -46,7 +47,6 @@ app.service('gridSolverService', function() {
 
 	var solveRecursively = function(grid) {
 
-		// Assign row and column variables common for all functions used in this function (eliminate extra variable assignments).
 		var row, col;
 
 		var unAssignedLocation = getUnAssignedLocation(grid);
